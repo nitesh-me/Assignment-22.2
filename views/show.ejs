@@ -1,0 +1,26 @@
+
+<% include partials/header %>
+<div class="ui main text container segment">
+    <div class="ui huge header">
+        <%= product.product %>
+    </div>
+    <div class="ui top attached segment">
+        
+    
+     <span ><% product.created.toDateString() %></span>
+    
+    
+        <p><%= product.description %></p>
+    </div>
+    <div style="display: inline;">
+        <a class="ui blue basic button" href="/products/<%= product._id%>/edit">Edit</a>
+        <form id="delete" action="/blogs/<%= product._id %>?_method=Delete" method="POST" >
+            <button class="ui red basic button">Delete </button>
+       
+    </div>
+    
+
+    
+</div>
+
+<% include partials/footer %>

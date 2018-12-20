@@ -1,0 +1,17 @@
+<% include partials/header%>
+<div class="ui main text container segment ">
+        <div class="ui huge header">Edit <%= blog.title %></div>
+        <form  action="/products/<%= blog._id %>?_method=PUT" method="POST" class="ui form ">
+            <div class="field">
+                <input type="text" name="name" value="<%= product.title %>" >
+            </div>
+            <div class="field">
+                <input type="text" name="price" value="<%= product.image %>">
+            </div>
+            <div class="field">
+                
+                <textarea rows="6" name="description" ><%= product.body %></textarea>
+            </div>
+            <div class="field"> <button class="ui violet basic button"> Submit</button></div>
+        </form>
+    </div>

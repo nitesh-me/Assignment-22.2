@@ -1,0 +1,17 @@
+<% include partials/header%>
+<div class="ui segment ">
+        <p>Hello</p>
+        <p><%= products.length %></p>
+        <div class="ui three stackable cards">
+                
+                  <% products.forEach(function(product){ %>
+                    <div class="card">
+                    <h4>Product <%= product.name %> </h4>
+                    <h4>Price:<%= product.price %></h4>
+                    <span><%= product.description %></span>
+                </div>
+                  <% }) %>
+                 
+               
+              </div>
+      </div>
