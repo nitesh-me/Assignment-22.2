@@ -21,9 +21,10 @@ router.get('/products',(req,res)=>{
     })
 
 })
-router.get('products/new',(req,res)=>{
-    // res.render('new.ejs')
-    res.send("Sg")
+//=====================================================================
+router.get('/products/new',(req,res)=>{
+    res.render('new.ejs')
+    // res.send("Sg")
    });
 ///===================Routes for creating new products=============================\\\
 router.post('/products',(req,res)=>{
@@ -79,25 +80,25 @@ router.get('/products/:id/edit',(req,res)=>{
 ///==================================Routes for updating particular routes =========================\\
 router.put('/products/:id',(req,res)=>{
     var updatedProduct ={
-        name:name,
-        description:description,
-        price:price
+        name:req.body.name,
+        description:req.body.description,
+        price:req.body.price
     }
     products.findByIdAndUpdate(req.params.id,updatedProduct,(err,product)=>{
         if(err){
             console.log(err);
         }
         else{
-            res.redirect("products/"+ req.params.id );
+            res.redirect("/products" );
             // res.send(product);
         }
     })
 });
 ///==================================Routes for deleating a products ======================================\\
 router.delete('/products/:id',(req,res)=>{
-    Notes.findByIdAndDelete(req.params.id);
+    products.findByIdAndDelete(req.params.id);
     console.log("file deletes");
-    res.redirect('/products')
+    res.redirect('/products');
     // res.send(" product deleted")
 })
 

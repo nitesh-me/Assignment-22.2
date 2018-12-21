@@ -1,14 +1,17 @@
 <% include partials/header%>
 <div class="ui segment ">
-        <p>Hello</p>
-        <p><%= products.length %></p>
+        
         <div class="ui three stackable cards">
                 
                   <% products.forEach(function(product){ %>
-                    <div class="card">
-                    <h4>Product <%= product.name %> </h4>
-                    <h4>Price:<%= product.price %></h4>
-                    <span><%= product.description %></span>
+                    <div class="card" style="background-color:lightgray">
+                    
+                    <h4 style="  margin-left: 53px;">Product <%= product.name %> </h4>
+                    <h4 style="  margin-left: 53px;">Price:<%= product.price %></h4>
+                    <span style="  margin-left: 53px;">Description : <%= product.description %></span>
+                  
+                    <a class="ui basic floated basic violet button" href="/products/<%= product._id %>" >Change something  </a>
+
                 </div>
                   <% }) %>
                  

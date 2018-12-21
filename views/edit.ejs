@@ -1,16 +1,16 @@
 <% include partials/header%>
 <div class="ui main text container segment ">
-        <div class="ui huge header">Edit <%= blog.title %></div>
-        <form  action="/products/<%= blog._id %>?_method=PUT" method="POST" class="ui form ">
+        <div class="ui huge header">Edit <%= product.name %></div>
+        <form  action="/products/<%= product._id %>?_method=PUT" method="POST" class="ui form ">
             <div class="field">
-                <input type="text" name="name" value="<%= product.title %>" >
+                <input type="text" name="name" value="<%= product.name %>" >
             </div>
             <div class="field">
-                <input type="text" name="price" value="<%= product.image %>">
+                <input type="text" name="price" value="<%= product.price %>">
             </div>
             <div class="field">
                 
-                <textarea rows="6" name="description" ><%= product.body %></textarea>
+                <textarea rows="6" name="description" ><%= product.description %></textarea>
             </div>
             <div class="field"> <button class="ui violet basic button"> Submit</button></div>
         </form>

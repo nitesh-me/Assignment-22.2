@@ -5,16 +5,17 @@
         <%= product.product %>
     </div>
     <div class="ui top attached segment">
-        
+        <h1 style="    margin-left: 53px;"><%= product.name %></h1>
+        <hr>
+        <h2 style="    margin-left: 53px;"><%= product.price %></h2>
     
-     <span ><% product.created.toDateString() %></span>
+        <hr>
     
-    
-        <p><%= product.description %></p>
+        <p style="    margin-left: 53px;"><%= product.description %></p>
     </div>
     <div style="display: inline;">
         <a class="ui blue basic button" href="/products/<%= product._id%>/edit">Edit</a>
-        <form id="delete" action="/blogs/<%= product._id %>?_method=Delete" method="POST" >
+        <form id="delete" action="/products/<%= product._id %>?_method=Delete" method="POST" >
             <button class="ui red basic button">Delete </button>
        
     </div>
